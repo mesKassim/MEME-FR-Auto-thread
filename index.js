@@ -3,8 +3,6 @@ const Client = new Discord.Client({
   intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_INTEGRATIONS", "GUILD_INTEGRATIONS"]
 });
 
-const token = require("./token.json");
-
 Client.on("ready", async () =>{
     console.log("bot opérationnel");
     Client.user.setStatus("online");
@@ -77,4 +75,4 @@ Client.on("messageCreate", message => {
   });
 });
 
-Client.login(token.token);
+Client.login(process.env.TOKEN);
